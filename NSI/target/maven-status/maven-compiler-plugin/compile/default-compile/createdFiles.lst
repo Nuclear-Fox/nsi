@@ -1,0 +1,6 @@
+com\mycompany\nsi\dbmethods\DBMethods.class
+com\mycompany\nsi\model\NSIModel.class
+com\mycompany\nsi\resources\JavaEE8Resource.class
+com\mycompany\nsi\model\NSIList.class
+com\mycompany\nsi\configuration\JAXRSConfiguration.class
+com\mycompany\nsi\service\Service.class
