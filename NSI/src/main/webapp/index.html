@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Справка</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles/table.css">
+        <link rel="stylesheet" href="styles/window.css">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div id="dark">
+            <div id="window">
+                Ку<br>
+                <a href="#" class="close">Закрыть</a>
+            </div>
+        </div>
+        
+        <h1>Справка</h1>
+        <a href="#dark">Вызвать всплывающее окно</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th id="vp_inv">ИНВ</th>
+                    <th id="prm_gr">Код группы характеристики</th>
+                    <th id="prm_x">Номер параметра</th>
+                    <th id="prm_fname">Наименование параметра</th>
+                    <th id="vp_zn">Значение характеристики</th>
+                    <th id="nsi_fname">Наименование</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <script src="scripts/script.js"></script>
     </body>
 </html>
