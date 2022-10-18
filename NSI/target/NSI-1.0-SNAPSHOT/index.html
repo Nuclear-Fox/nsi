@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Справка</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles/table.css">
+        <link rel="stylesheet" href="styles/window.css">
+        <link rel="stylesheet" href="styles/styles.css">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div id="openModal" class="modalDialog">
+            <div>
+                <a href="#close" title="Закрыть" onclick="closeWindow()" class="close">X</a>
+                <h2>Подробная информация</h2>
+                <p id="vp_inv_doc"><b>ИНВ:</b></p>
+                <div class="line"></div>
+                <p id="prm_gr_doc"><b>Код группы характеристики:</b></p>
+                <div class="line"></div>
+                <p id="prm_x_doc"><b>Номер параметра:</b></p>
+                <div class="line"></div>
+                <p id="prm_fname_doc"><b>Полное наименование параметра:</b></p>
+                <div class="line"></div>
+                <p id="vp_zn_doc"><b>Значение характеристики:</b></p>
+                <div class="line"></div>
+                <p id="nsi_fname_doc"><b>Полное наименование:</b></p>
+            </div>
+        </div>
+
+        
+        <h1>Справка</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th id="vp_inv">ИНВ</th>
+                    <th id="prm_gr">Код группы характеристики</th>
+                    <th id="prm_x">Номер параметра</th>
+                    <th id="prm_fname">Наименование параметра</th>
+                    <th id="vp_zn">Значение характеристики</th>
+                    <th id="nsi_fname">Наименование</th>
+                    <th id="doc">Подробнее</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    <script src="scripts/script.js"></script>
     </body>
 </html>

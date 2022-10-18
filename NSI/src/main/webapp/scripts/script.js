@@ -16,14 +16,60 @@ function fullTable()
     for (let line in data.list)
     {
         let tr = document.createElement('tr');
+        let prm_x;
         for (let note in data.list[line])
         {
             let td = document.createElement('td');
+            if (note === 'prm_x')
+                prm_x = data.list[line][note];
             let val = document.createTextNode(data.list[line][note].toString());
             td.appendChild(val);
             td.setAttribute('label', document.getElementById(note)['innerText']);//название столбца
             tr.appendChild(td);
         }
+        let tdForm = document.createElement('td');
+        tdForm.setAttribute('label', 'Подробнее');
+        let form = document.createElement('form');
+        form.setAttribute('action', '#openModal'); 
+        let but = document.createElement('button');
+        but.setAttribute('id', prm_x);
+        but.setAttribute('onclick', 'fullWindow(id)');
+        let i = document.createTextNode('i'.toString());
+        but.appendChild(i);
+        form.appendChild(but);
+        tdForm.appendChild(form);
+        tr.appendChild(tdForm);
         table.appendChild(tr);
     }
 }
+
+
+async function fullWindow(prm_x) {
+    let dataDocument = {};
+
+    let url = 'http://localhost:8080/server/nsi/getdoc?prm_x=' + prm_x.toString();
+    let response = await fetch(url);
+    dataDocument = await response.json();
+    
+    for (let note in dataDocument) {
+        let line = document.getElementById(note + '_doc');
+        
+        let span = document.createElement('span');
+        span.setAttribute('style', 'text-align: right;')
+        let param = document.createTextNode(dataDocument[note].toString());
+        span.appendChild(param);
+        line.append(span);
+    }
+}
+
+function closeWindow() {
+    let p = document.getElementsByTagName('p');
+    for (let note in p)
+    {
+        let pNote = p[note];
+        if (!!pNote.getElementsByTagName('span')[0])
+            pNote.removeChild(pNote.getElementsByTagName('span')[0]);
+    }
+}
+
+
